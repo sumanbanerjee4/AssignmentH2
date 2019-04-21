@@ -15,14 +15,16 @@ public class ContactService {
 	@Autowired
 	ContactRepo contactsRepository;
 	
+	
+	
 	public Contacts createContacts(Contacts contacts){
-		Contacts Contacts1 = contactsRepository.save(contacts);
-		return Contacts1;
+		contactsRepository.save(contacts);
+		return contacts;
 		
 	}
 
-	public List<Contacts> getAllContacts() {
-		List<Contacts> ContactsList = contactsRepository.findAll();
+	public Iterable<Contacts> getAllContacts() {
+		Iterable<Contacts> ContactsList = contactsRepository.findAll();
 		return ContactsList;
 	}
 
